@@ -1,0 +1,70 @@
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  .calendar-day {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
+    &:hover {
+      background-color: #ffdfdf;
+      transform: scale(1.05);
+    }
+    
+    .day-number {
+      font-size: 1.5rem;
+    }
+    
+    .events {
+      margin-top: 10px;
+      .event {
+        background-color: #ff9800;
+        padding: 5px;
+        border-radius: 5px;
+        animation: fadeIn 0.3s ease;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    animation: slideDown 0.3s ease;
+    
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+  }
+}
